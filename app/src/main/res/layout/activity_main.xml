@@ -169,20 +169,42 @@
         android:layout_above="@+id/btnbra2"/>
 
 
-    <TextView
-        android:id="@+id/outputText"
+    <HorizontalScrollView
+        android:id="@+id/scrollout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_above="@id/btndiv"
-        android:layout_marginBottom="17dp"
-        android:textSize="40sp" />
+        android:layout_marginBottom="17dp">
 
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:gravity="end"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
 
-    <TextView
-        android:id="@+id/inputText"
+</HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/scrollin"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:textSize="40sp"
-        android:layout_above="@+id/outputText"/>
+        android:layout_above="@id/scrollout"
+        android:layout_marginBottom="1dp">
+
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textSize="40sp" />
+    </HorizontalScrollView>
+
+
+
+
 
 </RelativeLayout>

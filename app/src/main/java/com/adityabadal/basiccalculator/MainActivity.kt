@@ -1,13 +1,16 @@
 package com.adityabadal.basiccalculator
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.HorizontalScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +42,13 @@ class MainActivity : AppCompatActivity() {
         val btnac=findViewById<Button>(R.id.btnac)
         val btnequal=findViewById<Button>(R.id.btnequal)
         val inputText=findViewById<TextView>(R.id.inputText)
+        val scrollin = findViewById<HorizontalScrollView >(R.id.scrollin)
+        inputText.textAlignment = View.TEXT_ALIGNMENT_TEXT_END
+        scrollin.post {scrollin.fullScroll(HorizontalScrollView.FOCUS_RIGHT)}
         val outputText=findViewById<TextView>(R.id.outputText)
+        val scrollout=findViewById<HorizontalScrollView>(R.id.scrollout)
+        inputText.textAlignment=View.TEXT_ALIGNMENT_TEXT_END
+        scrollout.post { scrollout.fullScroll(HorizontalScrollView.FOCUS_RIGHT) }
 
         btn0.setOnClickListener { inputText.append("0") }
         btn1.setOnClickListener { inputText.append("1") }
@@ -62,8 +71,16 @@ class MainActivity : AppCompatActivity() {
             inputText.text=""
             outputText.text=""
         }
-        findViewById<Button>(R.id.invisible).setOnClickListener {
-            Toast.makeText(this,"this is toast",Toast.LENGTH_LONG).show()
+        btnequal.setOnClickListener {
+            val expression = ExpressionBuilder(inputText.text.toString()).build()
+            val result=expression.evaluate()
+            val longresult=result.toString()
+
+            if(result==longresult.toDouble()){
+                outputText.text=longresult.toString()
+            }else{
+                outputText.text=result.toString()
+            }
+        }
         }
     }
-}
