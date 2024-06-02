@@ -3,6 +3,7 @@ package com.adityabadal.basiccalculator
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -60,6 +61,9 @@ class MainActivity : AppCompatActivity() {
         btnac.setOnClickListener {
             inputText.text=""
             outputText.text=""
+        }
+        findViewById<Button>(R.id.invisible).setOnClickListener {
+            Toast.makeText(this,"this is toast",Toast.LENGTH_LONG).show()
         }
     }
 }
