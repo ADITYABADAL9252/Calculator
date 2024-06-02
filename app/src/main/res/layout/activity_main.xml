@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0"
+        android:layout_toEndOf="@+id/invisible"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/btndot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot"
+        android:layout_toEndOf="@+id/btn0"
+        android:layout_marginStart="2dp"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/btnequal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equal"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btndot"/>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1"
+        android:layout_above="@+id/invisible"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_2"
+        android:layout_toEndOf="@+id/btn1"
+        android:layout_above="@+id/btn0"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_3"
+        android:layout_above="@+id/btndot"
+        android:layout_toEndOf="@+id/btn2"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4"
+        android:layout_above="@+id/btnequal"
+        android:layout_toEndOf="@+id/btn3"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_5"
+        android:layout_above="@+id/btn1"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/btn5"
+        android:layout_above="@+id/btn2"
+        android:text="@string/_6"/>
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_7"
+        android:layout_above="@+id/btn3"
+        android:layout_toEndOf="@+id/btn6"/>
+
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btn7"
+        android:layout_above="@+id/btn4"
+        android:text="@string/_8"/>
+
+    <Button
+        android:id="@+id/btnac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn5"
+        android:text="@string/ac"/>
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_9"
+        android:layout_above="@id/btn6"
+        android:layout_toEndOf="@id/btnac"/>
+
+    <Button
+        android:id="@+id/btnbra1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/braketopen"
+        android:layout_toEndOf="@id/btn9"
+        android:layout_above="@+id/btn7"/>
+
+    <Button
+        android:id="@+id/btnbra2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/braketclose"
+        android:layout_toEndOf="@+id/btnbra1"
+        android:layout_above="@+id/btn8"/>
+
+    <Button
+        android:id="@+id/btnplus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addition"
+        android:layout_above="@+id/btnac"/>
+
+    <Button
+        android:id="@+id/btnsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtract"
+        android:layout_toEndOf="@+id/btnplus"
+        android:layout_above="@+id/btn9"/>
+
+    <Button
+        android:id="@+id/btnmul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnbra1"
+        android:layout_marginStart="0dp"
+        android:layout_toEndOf="@id/btnsub"
+        android:text="@string/multiply" />
+
+    <Button
+        android:id="@+id/btndiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/divide"
+        android:layout_toEndOf="@+id/btnmul"
+        android:layout_above="@+id/btnbra2"/>
+
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/btndiv"
+        android:layout_marginBottom="17dp"
+        android:textSize="40sp" />
+
+
+    <TextView
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="40sp"
+        android:layout_above="@+id/outputText"/>
+
+</RelativeLayout>
